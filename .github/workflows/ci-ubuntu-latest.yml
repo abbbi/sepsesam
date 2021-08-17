@@ -18,8 +18,8 @@ jobs:
     - name: Configure sesam apt sources
       run: echo 'deb https://download.sep.de/linux/repositories/debian/ buster main' | sudo tee -a /etc/apt/sources.list
     - name: Update apt sources
-      run: apt-get update -y
+      run: sudo apt-get update -y
     - name: Install sesam server
-      run: apt-get install sesam-srv python3 -y
+      run: sudo apt-get install sesam-srv python3 -y
     - name: Execute pyunit tests
       run: python3 t/tests.py
