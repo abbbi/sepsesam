@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Add sesam repository key
-      run: curl https://download.sep.de/linux/repositories/debian/key.asc | apt-key add -
+      run: curl https://download.sep.de/linux/repositories/debian/key.asc | sudo apt-key add -
     - name: Configure sesam apt sources
       run: echo 'deb https://download.sep.de/linux/repositories/debian/ buster main' | sudo tee -a /etc/apt/sources.list
     - name: Update apt sources
